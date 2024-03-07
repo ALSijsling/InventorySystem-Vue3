@@ -6,5 +6,5 @@
 </script>
 
 <template>
-    <ProductForm @submitProduct="(product) => addProduct(product)" :product="product"/>
+    <ProductForm @submitProduct="(product) => addProduct(product)" :product="product" buttonValue="Add Product"/>
 </template>

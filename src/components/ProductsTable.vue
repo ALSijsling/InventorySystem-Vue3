@@ -21,6 +21,7 @@
                 <TableData>{{ product.name }}</TableData>
                 <TableData>{{ product.minimumAmount }}</TableData>
                 <TableData><input v-model="product.actualAmount" type="number" min="0" class="border border-slate-500 border-solid rounded-md pl-2" /></TableData>
+                <TableData><router-link :to="{name: 'Edit', params:{id: product.id}}" class="m-6 px-2 py-1 bg-blue-800 text-slate-100 rounded-lg">Edit</router-link></TableData>
             </tr>
         </tbody>
     </table>
