@@ -1,7 +1,7 @@
 <script setup>
-    import { orderProducts } from '../../store/Inventory'
+    import { getOrderProducts } from '../../store/Inventory'
 
-    const products = orderProducts()
+    const products = getOrderProducts()
 </script>
 
 <template>

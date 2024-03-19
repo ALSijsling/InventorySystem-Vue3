@@ -13,22 +13,10 @@ const products = ref([
     {id: id++, name: "Gordijnen", actualAmount: 10, minimumAmount: 15}
 ])
 
-export const orderProducts = () => computed(()=> {
-    let productsNeeded = []
-
-    products.value.forEach(product => {
-            if(product.actualAmount < product.minimumAmount) {
-                productsNeeded.push(product)
-            }
-    })
-
-    return productsNeeded;
-});
-
 //Getters
 export const getAllProducts = () => computed(()=> products.value)
 export const getProductById = (id) => computed(()=> products.value.find(product => product.id == id))
-export const getOrderProducts = () => computed(() => orderProducts.value)
+export const getOrderProducts = () => computed(()=> products.value.filter(product => product.actualAmount < product.minimumAmount))
 
 //Actions
 export const addProduct = (product) => products.value.push(product)
